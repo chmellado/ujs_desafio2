@@ -1,0 +1,3 @@
+$("#new_list").html("<%= escape_javascript(render partial: 'posts/lista', locals: { post: @post } ) %>")
+$("#post_content").val("")
+$("#post_author").val("")

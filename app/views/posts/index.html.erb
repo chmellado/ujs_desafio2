@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="partial"></div>
+<div id="form2"><%= render 'new', post: @post %></div>
+
+
+<form action="<%= posts_find_path %>" method="post" accept-charset="UTF-8" data-remote="true" >
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%> 
+  <label for="find_title">Buscar: </label>
+  <input type="text" id="find_title" name="find_title">
+  <input type="submit" value="Submit">
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="new_list" >
+    <%=render 'posts/lista' %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
